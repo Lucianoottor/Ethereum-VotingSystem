@@ -1,14 +1,14 @@
-##Blockchain Voting System
+Blockchain Voting System
 A decentralized voting application built on the Ethereum blockchain. This project implements a secure and transparent election system with role-based access control for an Administrator, Clerks, and Voters. The frontend is built with React, TypeScript, and Ethers.js.
 
-###Tech Stack
+Tech Stack
 Smart Contract: Solidity, Truffle Suite (Development, Testing, Deployment)
 
 Frontend: React, TypeScript, TailwindCSS
 
 Blockchain Interaction: Ethers.js
 
-###Architecture Overview
+Architecture Overview
 The application is architecturally divided into three main layers: the Smart Contract (on-chain logic), the Blockchain Service (off-chain to on-chain communication), and the Frontend (user interface).
 
 1. Smart Contract (Ballot.sol)
