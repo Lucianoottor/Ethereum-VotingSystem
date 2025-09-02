@@ -98,3 +98,106 @@ Page Components (LoginPage, AdminPage, ClerkPage, VotingPage, etc.) are primaril
 They receive functions as props from App.tsx (e.g., onLoginSuccess, onVote) to report user actions back to the main controller.
 
 Pages that need to display on-chain data (AdminPage, ClerkPage, SuccessPage) contain their own useEffect hooks to fetch that data directly from the blockchain service, keeping them encapsulated.
+
+## Requirements
+
+#### Check modules version
+
+```http
+  node -v
+  yarn -v
+```
+
+| Module | Version    | 
+| :-------- | :------- | 
+| `Node.js` | `v18.20.8` | 
+| `yarn` | `v1.22.22` | 
+
+## How to use
+
+Initialize your blockchain network (I am using Ganache)
+
+Clone the repository:
+```bash
+  git clone https://github.com/Lucianoottor/Ethereum-VotingSystem.git
+```
+Go to the folder Blockchain_VotingSystem:
+```bash
+  cd Blockchain_VotingSystem/
+```
+Make sure the file truffle-config.js matches the requirements:
+```bash
+  module.exports = {
+  networks: {
+    development: {
+     host: "127.0.0.1", // Your network
+     port: 7545, // Your port
+     network_id: "*"
+    },
+    dashboard: {
+    }
+  },
+  compilers: {
+    solc: {
+      version: "0.8.13", // Solidity version
+    }
+  },
+  db: {
+    enabled: false,
+    host: "127.0.0.1",
+  }
+};
+```
+Install the dependencies:
+```bash
+  npm install
+```
+Compile, test and migrate the contract:
+```bash
+  truffle compile
+  truffle test
+  truffle migrate
+```
+Now, we have to get the contract address and contract ABI where we deployed. Attention: the account used to deploy will be the contract administrator (generally in Ganache it will be the first account of the network)
+
+In the path build/contracts, get the Ballot.json and locate the contractABI [];
+
+And the contract address (generally it is all the way down):
+```bash
+"networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x1Bbef2DA7aD40A2f4BE7A6E22b1d03dd997E6915", // This guy right here
+      "transactionHash": "0x223de67a9e6936fbd08285e06fc5618a8755b701c263422a75b248fe2febbe88"
+    }
+```
+
+Perfect, now let's interact with the frontend using ethers.js.
+
+First, go to FrontEnd/election-front and install the dependencies:
+```bash
+  npm install
+```
+
+Inside FrontEnd/election-front/src/services, open the blockchain.ts, this file is responsible for interacting with the contract using the ethers library. Paste the contract info here:
+```bash
+const contractAddress = '0x1Bbef2DA7aD40A2f4BE7A6E22b1d03dd997E6915'; // Your contract address
+const contractABI = [...] // Your contract ABI
+```
+Run the frontend:
+```bash
+  yarn dev
+```
+
+Ok it is almost set up, make sure you configure your Metamask wallet network and connect with the private keys of your chain.
+
+1. Connect with the admin account
+2. Setup a Clerk account
+3. Connect with the clerk account
+4. Setup the valid voters
+5. Connect with the voters account and start voting!
+
+
+
+
