@@ -41,19 +41,29 @@ The application is architecturally divided into three main layers: the Smart Con
 **Voter:** An address that has been granted the right to vote by a Clerk.
 
 **Actions:** A qualified voter can call the vote function once to cast their ballot for a chosen candidate.
-![me](https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/DemoVoting.gif)
+<p align="center">
+  <img src="https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/DemoVoting.gif" alt="Demo Voting System GIF" width="600" height="400">
+</p>
 
 **State:** A voter's status is tracked by two mappings: rightToVote (set by a clerk) and hasVoted (set upon voting).
-![me](https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/AlreadyVoted.gif)
+<p align="center">
+  <img src="https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/AlreadyVoted.gif" alt="Already Voted GIF" width="600" height="400">
+</p>
 
 **Core Functions:** defineClerk(address _newClerk): onlyAdm. Grants clerk privileges to a new address.
-![me](https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/AdminPanel.png)
+<p align="center">
+  <img src="https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/AdminPanel.png" alt="Admin Panel Screenshot" width="600" height="400">
+</p>
 
 **qualifyVoter(address _voterAddress):** onlyClerk. Grants voting rights to a new address.
-![me](https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/ClerkPanel.png)
+<p align="center">
+  <img src="https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/ClerkPanel.png" alt="Clerk Panel Screenshot" width="600" height="400">
+</p>
 
 **vote(uint _candidateId):** Allows a qualified, non-voted address to cast a vote. It contains three require checks to enforce the rules.
-![me](https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/DemoNonAutorizedVoter.gif)
+<p align="center">
+  <img src="https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/DemoNonAutorizedVoter.gif" alt="Demo Non-Authorized Voter GIF" width="600" height="400">
+</p>
 
 **getCandidates():** A view function that returns the array of all candidates along with their current vote counts.
 ## Blockchain Service
