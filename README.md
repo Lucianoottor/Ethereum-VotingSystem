@@ -1,6 +1,8 @@
 
 # Blockchain Voting System
-![me](https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/DemoVoting.gif)
+<p align="center">
+  <img src="https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/DemoVoting.gif" alt="Demo Voting System GIF">
+</p>
 
 A decentralized voting application built on the Ethereum blockchain. This project is a transparent election system with role-based access control for an Administrator, Clerks, and Voters.
 
@@ -47,6 +49,7 @@ The application is architecturally divided into three main layers: the Smart Con
 **qualifyVoter(address _voterAddress):** onlyClerk. Grants voting rights to a new address.
 
 **vote(uint _candidateId):** Allows a qualified, non-voted address to cast a vote. It contains three require checks to enforce the rules.
+![me](https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/DemoVoting.gif)
 
 **getCandidates():** A view function that returns the array of all candidates along with their current vote counts.
 ## Blockchain Service
