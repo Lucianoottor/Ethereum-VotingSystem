@@ -39,16 +39,18 @@ The application is architecturally divided into three main layers: the Smart Con
 **Security:** This role is protected by the onlyClerk modifier.
 
 **Voter:** An address that has been granted the right to vote by a Clerk.
-![me](https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/ClerkPanel.png)
-
-**State:** A voter's status is tracked by two mappings: rightToVote (set by a clerk) and hasVoted (set upon voting).
 
 **Actions:** A qualified voter can call the vote function once to cast their ballot for a chosen candidate.
+![me](https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/DemoVoting.gif)
+
+**State:** A voter's status is tracked by two mappings: rightToVote (set by a clerk) and hasVoted (set upon voting).
+![me](https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/AlreadyVoted.gif)
 
 **Core Functions:** defineClerk(address _newClerk): onlyAdm. Grants clerk privileges to a new address.
 ![me](https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/AdminPanel.png)
 
 **qualifyVoter(address _voterAddress):** onlyClerk. Grants voting rights to a new address.
+![me](https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/ClerkPanel.png)
 
 **vote(uint _candidateId):** Allows a qualified, non-voted address to cast a vote. It contains three require checks to enforce the rules.
 ![me](https://github.com/Lucianoottor/Ethereum-VotingSystem/blob/main/assets/DemoNonAutorizedVoter.gif)
