@@ -1,5 +1,6 @@
 
 # Blockchain Voting System
+![til](./Ethereum-VotingSystem/assets/DemoVoting.gif)
 
 A decentralized voting application built on the Ethereum blockchain. This project is a transparent election system with role-based access control for an Administrator, Clerks, and Voters.
 
